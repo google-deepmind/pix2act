@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package pix2act;
+
+message Step {
+  optional int32 step = 1;
+  optional bytes screenshot_png = 2;
+  optional string cursor_state = 3;
+  optional string action = 4;
+}
+
+message Episode {
+  optional int32 seed = 1;
+  optional string task_name = 2;
+  repeated Step steps = 3;
+  optional float raw_reward = 4;
+  optional float env_reward = 5;
+  optional bool complete = 6;
+}

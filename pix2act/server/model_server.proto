@@ -1,0 +1,32 @@
+
+syntax = "proto2";
+
+package pix2act;
+
+message Request {
+  // A batch of screenshots encoded as pngs.
+  repeated bytes screenshot_png = 1;
+}
+
+message Prediction {
+  // Model output string.
+  optional string output = 1;
+  // Log-prob scores.
+  optional float score = 2;
+}
+
+message Beam {
+  // K-best beam of predictions.
+  // Predictions should be ordered from lowest to highest scores.
+  repeated Prediction predictions = 1;
+}
+
+message Response {
+  // One beam for every input in batch.
+  repeated Beam beams = 1;
+}
+
+service ModelServer {
+  // Runs Pix2Struct model and returns response.
+  rpc Predict(Request) returns (Response) {}
+}

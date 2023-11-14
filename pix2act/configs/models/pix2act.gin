@@ -1,0 +1,7 @@
+from __gin__ import dynamic_registration
+from pix2struct import transfer_utils
+
+include 'pix2struct/configs/models/pix2struct.gin'
+
+transfer_utils.transfer_warmup_cosine_decay_schedule:
+  cycle_length_ratio = 1.1

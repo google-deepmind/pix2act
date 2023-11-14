@@ -1,0 +1,2 @@
+INITIAL_CHECKPOINT_PATH = 'gs://pix2act-data/miniwob_bc_100'
+INIT_STEPS = 302800

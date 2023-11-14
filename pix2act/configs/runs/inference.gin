@@ -1,0 +1,19 @@
+from __gin__ import dynamic_registration
+from t5x import partitioning
+
+from pix2act.server import inference_utils
+
+TASK_FEATURE_LENGTHS = %gin.REQUIRED
+BATCH_SIZE = %gin.REQUIRED
+CHECKPOINT_PATH = %gin.REQUIRED
+
+inference_utils.get_inference_fn:
+  batch_size = %BATCH_SIZE
+  sequence_length = %TASK_FEATURE_LENGTHS
+  model = %MODEL
+  checkpoint_path = %CHECKPOINT_PATH
+  partitioner = @partitioning.PjitPartitioner()
+
+partitioning.PjitPartitioner:
+  num_partitions = 1
+  logical_axis_rules = @partitioning.standard_logical_axis_rules()

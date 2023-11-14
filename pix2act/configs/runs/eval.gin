@@ -1,0 +1,2 @@
+import pix2act.pix2act_tasks
+include 'pix2struct/configs/runs/eval.gin'
