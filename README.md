@@ -55,7 +55,7 @@ python -m grpc_tools.protoc -I . --python_out=.    pix2act/tasks/miniwob/episode
 
 ### Chrome and ChromeDriver
 
-Inference and evaluation also requires installing ChromeDriver. You can find
+Inference and evaluation also requires installing [ChromeDriver](https://chromedriver.chromium.org/). You can find
 your current version of Chrome by running `google-chrome --version`, and then [download](https://chromedriver.chromium.org/downloads) the corresponding
 ChromeDriver. The `chromedriver`
 binary should be moved to `/usr/bin` or its location explicitly added your `PATH`.
