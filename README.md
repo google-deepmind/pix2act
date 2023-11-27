@@ -1,6 +1,6 @@
 # Pix2Act
 
-This repository contains code for [From Pixels to UI Actions: Learning to Follow Instructions via Graphical User Interfaces](https://arxiv.org/abs/2306.00245).
+This repository contains code for our NeurIPS 2023 paper [From Pixels to UI Actions: Learning to Follow Instructions via Graphical User Interfaces](https://arxiv.org/abs/2306.00245).
 
 ## Setup and Prerequisites
 
