@@ -384,7 +384,7 @@ python -m t5x.train \
 
 The default argument for `--cursor_dir` for several of the scripts above is `gs://pix2act-data/cursors/`, which includes the cursor graphics used to
 train our models. The cursor graphics are from
-[yaru](https://github.com/ubuntu/yaru). Please see the corresponding [readme](https://github.com/ubuntu/yaru/tree/master/icons#copying-or-reusing) and [license](https://creativecommons.org/licenses/by-sa/4.0/). These are used to render cursors on top of the screenshots
+[yaru](https://github.com/ubuntu/yaru). Please see the corresponding [README](https://github.com/ubuntu/yaru/tree/master/icons#copying-or-reusing) and [LICENSE](https://creativecommons.org/licenses/by-sa/4.0/). These are used to render cursors on top of the screenshots
 generated via Selenium.
 
 ## Citation
