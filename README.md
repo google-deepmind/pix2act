@@ -13,7 +13,7 @@ such as by following these commands:
 
 ```
 conda create -n pix2act python=3.10
-conda activate pixact
+conda activate pix2act
 ```
 
 We recommend using Python 3.10 or later.
