@@ -1,4 +1,4 @@
-# Copyright 2023 The pix2act Authors.
+# Copyright 2026 The pix2act Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -202,7 +202,7 @@ class MctsNode:
 
   def add_child(self, action):
     child = MctsNode(self.context, self, action)
-    self._action_to_child[action] = child
+    self._action_to_child[action] = child  # pyrefly: ignore[unsupported-operation]
     return child
 
   def _compute_uct(self, action):

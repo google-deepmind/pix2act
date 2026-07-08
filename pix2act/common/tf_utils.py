@@ -1,4 +1,4 @@
-# Copyright 2023 The pix2act Authors.
+# Copyright 2026 The pix2act Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -74,7 +74,7 @@ class SplitAndWriteTFRecords(beam.PTransform):
       self, example: tf.train.Example, unused_num_partitions: int
   ) -> int:
     key_feature = get_text_feature(example, "id")
-    return int(_get_hash(key_feature) % 100 < self._validation_percent)
+    return int(_get_hash(key_feature) % 100 < self._validation_percent)  # pyrefly: ignore[unsupported-operation]
 
   def expand(self, pcoll):
     train, val = (

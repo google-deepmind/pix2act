@@ -1,4 +1,4 @@
-# Copyright 2023 The pix2act Authors.
+# Copyright 2026 The pix2act Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import tensorflow as tf
 
 
 OUTPUT_FEATURES = dict(
-    inputs=seqio.ContinuousFeature(rank=2, dtype=tf.float32),
+    inputs=seqio.ContinuousFeature(rank=2, dtype=tf.float32),  # pyrefly: ignore[unexpected-keyword]
     targets=seqio.Feature(
         vocabulary=seqio.SentencePieceVocabulary(
             "gs://pix2struct-data/sentencepiece.model"
@@ -96,13 +96,13 @@ class InputPipeline:
           }
 
     input_ds = tf.data.Dataset.from_generator(
-        _ds_gen, output_signature=FEATURE_SIGNATURE
+        _ds_gen, output_signature=FEATURE_SIGNATURE  # pyrefly: ignore[bad-argument-type]
     )
 
     self._task = seqio.Task(
         "predict_task",
         source=seqio.FunctionDataSource(
-            dataset_fn=lambda split, shuffle_files: input_ds,
+            dataset_fn=lambda split, shuffle_files: input_ds,  # pyrefly: ignore[bad-argument-type]
             splits=("predict",),
         ),
         preprocessors=PREPROCESSORS,
@@ -156,7 +156,7 @@ def get_inference_fn(
   input_shapes = input_pipeline.input_shapes()
   train_state_initializer = utils.TrainStateInitializer(
       optimizer_def=None,
-      init_fn=model.get_initial_variables,
+      init_fn=model.get_initial_variables,  # pyrefly: ignore[bad-argument-type]
       input_shapes=input_shapes,
       partitioner=partitioner,
   )

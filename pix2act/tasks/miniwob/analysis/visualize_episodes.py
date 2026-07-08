@@ -1,4 +1,4 @@
-# Copyright 2023 The pix2act Authors.
+# Copyright 2026 The pix2act Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ def convert_episode(episode):
 
 
 def main(unused_argv):
-  raw_dataset = tf.data.TFRecordDataset(FLAGS.input)
+  raw_dataset = tf.data.TFRecordDataset(FLAGS.input)  # pyrefly: ignore[bad-instantiation]
   for raw_record in raw_dataset.take(FLAGS.limit):
     episode = episode_pb2.Episode.FromString(raw_record.numpy())
     steps = convert_episode(episode)

@@ -1,4 +1,4 @@
-# Copyright 2023 The pix2act Authors.
+# Copyright 2026 The pix2act Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -211,10 +211,10 @@ def main(unused_argv):
           logging.info("Error executing action: %s", e)
           break
         step_id += 1
-      metrics["rewards"][goal_idx] = raw_reward
+      metrics["rewards"][goal_idx] = raw_reward  # pyrefly: ignore[unsupported-operation]
 
-  metrics["success_rate"] = metrics["num_success"] / metrics["num_episodes"]
-  metrics["task_score"] /= metrics["num_episodes"]
+  metrics["success_rate"] = metrics["num_success"] / metrics["num_episodes"]  # pyrefly: ignore[unsupported-operation]
+  metrics["task_score"] /= metrics["num_episodes"]  # pyrefly: ignore[unsupported-operation]
   metrics_filepath = f"{FLAGS.output_dir}/{FLAGS.split}.json"
   write_json(metrics_filepath, metrics)
 
