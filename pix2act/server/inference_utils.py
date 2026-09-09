@@ -173,8 +173,8 @@ def get_inference_fn(
   # JIT compile the prediction function.
   predict_batch_raw_fn = functools.partial(
       model.predict_batch_with_aux,
-      num_decodes=num_decodes,
-      return_all_decodes=True,
+      num_decodes=num_decodes,  # pyrefly: ignore[unexpected-keyword]
+      return_all_decodes=True,  # pyrefly: ignore[unexpected-keyword]
   )
   predict_batch_fn = partitioner.partition(
       predict_batch_raw_fn,
